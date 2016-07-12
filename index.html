@@ -1,0 +1,31 @@
+<html>
+<header>
+    <title>Demo Web</title>
+
+</header>
+
+<body>
+    <h2>Demo Web App</h2>
+    <p>
+        <strong>Temperature: </strong> <span id='temp'></span>
+    </p>
+    <p>
+        <strong>Humidity: </strong> <span id='humi'></span>
+    </p>
+    <p>
+        <strong>Luminance: </strong> <span id='lumi'></span>
+    </p>
+    <script>
+        var getQueryString = function ( field, url ) {
+    var href = url ? url : window.location.href;
+    var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
+    var string = reg.exec(href);
+    return string ? string[1] : null;
+};
+    document.getElementById('temp').innerHTML = getQueryString('temp');
+    document.getElementById('humi').innerHTML = getQueryString('humi');
+    document.getElementById('lumi').innerHTML = getQueryString('lumi');
+    </script>
+</body>
+
+</html>
